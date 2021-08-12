@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [word, setWord] = useState();
+  const [value, setValue] = useState(false);
+
+  const getData = (props) => {
+    const {target} = props;
+    const {value} = target;
+    setWord(value);
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>User Input</h1>
+        {value ? <h1>{word}</h1> : null}
+        <input type="text" onChange={getData} />
+        <button style={{margin: "20px"}} onClick={() => setValue(true)}>
+          Show value
+        </button>
+        <button style={{margin: "20px"}} onClick={() => setValue(false)}>
+          Hide value
+        </button>
       </header>
     </div>
   );
-}
+};
 
 export default App;
