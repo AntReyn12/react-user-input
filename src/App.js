@@ -19,9 +19,7 @@ const App = () => {
         <button style={{margin: "20px"}} onClick={() => setValue(true)}>
           Show value
         </button>
-        <button style={{margin: "20px"}} onClick={() => setValue(false)}>
-          Hide value
-        </button>
+        <button onClick={() => setValue(false)}>Hide value</button>
       </header>
     </div>
   );
