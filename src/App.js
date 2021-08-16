@@ -13,13 +13,22 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>User Input</h1>
-        {value ? <h1>{word}</h1> : null}
+        <h1 style={{marginBottom: "200px"}}>User Input</h1>
+        {value ? (
+          <div>
+            <h1>{word}</h1>
+            <button style={{margin: "25px"}} onClick={() => setValue(false)}>
+              Hide value
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button style={{margin: "25px"}} onClick={() => setValue(true)}>
+              Display value
+            </button>
+          </div>
+        )}
         <input type="text" onChange={getData} />
-        <button style={{margin: "20px"}} onClick={() => setValue(true)}>
-          Show value
-        </button>
-        <button onClick={() => setValue(false)}>Hide value</button>
       </header>
     </div>
   );
