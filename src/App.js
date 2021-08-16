@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./App.css";
 
 const App = () => {
-  const [word, setWord] = useState();
+  const [word, setWord] = useState("");
   const [value, setValue] = useState(false);
 
   const getData = (props) => {
