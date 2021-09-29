@@ -24,7 +24,7 @@ const App = () => {
         ) : (
           <div>
             <button style={{margin: "25px"}} onClick={() => setValue(true)}>
-              Display value
+              Show value
             </button>
           </div>
         )}
